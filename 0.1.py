@@ -45,7 +45,7 @@ def university_response(environ):
 
     if not correctMarks(**rating):
         response_content = f"""
-        <p>Please check your marks ( 0-100 allowed) </p>
+        <p style="color: red">Please check your marks ( 0-100 allowed) </p>
         """
     else:
         if canApplyUniversity(**rating):
@@ -54,7 +54,7 @@ def university_response(environ):
         """
         else:
             response_content = f"""
-            <p>{form_data["full_name"][0]} can not apply to university </p>
+            <p style="color: red">{form_data["full_name"][0]} can not apply to university </p>
             """
     return [response_content.encode()]
 
